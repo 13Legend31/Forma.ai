@@ -3,7 +3,7 @@ function Sell(portfolio, { price, ticker, shares }) {
     shares = parseInt(shares, 10)
     const p = portfolio[ticker]
     p.totalShares -= shares
-    if (p.shares === 0) {
+    if (p.totalShares === 0) {
         delete portfolio[ticker]
     }
     
