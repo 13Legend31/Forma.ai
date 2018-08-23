@@ -79,4 +79,4 @@ while (k < continuation.length) {
 
 // Space Complexity:
 // Best Case: O(1) - No overlapping dates
-// Worst Case: O(a + b) - if 1 unique date, then transactions.length = a + b
+// Worst Case: O(a + b) - 1 unique date
