@@ -32,6 +32,15 @@ while (i < actions.length && j < stock_actions.length) {
         j++
     }
 
+    // for the test case, we don't need these loops but in general, we do
+    for (i; i < actions.length && actions[i].date.split(' ')[0] === date; i++) {
+        transactions.push(actions[i])
+    }
+    for (j; j < stock_actions.length && stock_actions[j].date === date; j++) {
+        transactions.push(stock_actions[j])
+    }
+    //----------------------------------------------------------------------------
+
     const statement = MakeStatement(date, transactions, portfolio, dividend)
     dividend = statement.dividend
     if (statement.events.length > 0) {
@@ -70,4 +79,4 @@ while (k < continuation.length) {
 
 // Space Complexity:
 // Best Case: O(1) - No overlapping dates
-// Worst Case: O(a + b) - only 1 unique date
+// Worst Case: O(a + b) - if 1 unique date, then transactions.length = a + b
