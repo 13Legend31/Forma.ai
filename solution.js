@@ -78,8 +78,7 @@ while (k < continuation.length) {
 // Define: a = actions.length, b = stock_actions.length
 
 // Time Complexity:
-// Best Case: O(max(a, b)) - Every date in actions overlaps with stock_actions
-// Worst Case: O(a + b) - No overlapping dates
+// O(a + b)
 
 // Space Complexity:
 // Best Case: O(1) - No overlapping dates
