@@ -8,7 +8,7 @@ function Sell(portfolio, { price, ticker, shares }) {
     }
     
     const profit = shares * price - shares * p.averagePrice
-    return `You sold ${shares} shares of ${ticker} at a price of $${price} per share for a ${profit >= 0 ? 'profit' : 'loss'} of $${profit}`
+    return `You sold ${shares} shares of ${ticker} at a price of $${price.toFixed(2)} per share for a ${profit >= 0 ? 'profit' : 'loss'} of $${profit.toFixed(2)}`
 }
 
 module.exports = Sell

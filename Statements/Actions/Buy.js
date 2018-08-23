@@ -13,7 +13,7 @@ function Buy(portfolio, { price, ticker, shares }) {
     p.averagePrice = p.averagePrice * p.totalShares/total + price * shares/total
     p.totalShares += shares
 
-    return `You bought ${shares} shares of ${ticker} at a price of $${price} per share`
+    return `You bought ${shares} shares of ${ticker} at a price of $${price.toFixed(2)} per share`
 }
 
 module.exports = Buy

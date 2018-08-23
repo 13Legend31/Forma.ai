@@ -54,8 +54,12 @@ let k = i === actions.length ? j : i
 const continuation = i === actions.length ? stock_actions : actions
 
 while (k < continuation.length) {
-    transactions.length = 0
-    const date = continuation[k].date.split(' ')[0]
+    // edge case - if the first continued date is the same as the previous date
+    let d = continuation[k].date.split(' ')[0]
+    if (d !== date) {
+        transactions.length = 0
+        date = d
+    }
 
     for (k; k < continuation.length && continuation[k].date.split(' ')[0] === date; k++) {
         transactions.push(continuation[k])
