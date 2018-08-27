@@ -17,7 +17,7 @@ while (i < actions.length && j < stock_actions.length) {
 
     const d1 = actions[i].date.split(' ')[0],
           d2 = stock_actions[j].date
-    if (actions[i].date === stock_actions[j].date) {
+    if (d1 === d2) {
         date = d1
         transactions.push(actions[i])
         transactions.push(stock_actions(j))
